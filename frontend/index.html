@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SpendPilot AI | Smart Shopping Assistant</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/app.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="/" class="brand">
+                <span class="brand-icon">✦</span>
+                SpendPilot <span class="brand-ai">AI</span>
+            </a>
+
+            <span class="header-label">
+                Intelligent Shopping Assistant
+            </span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-badge">
+                AI-Powered Product Discovery
+            </div>
+
+            <h1>
+                Shop smarter.
+                <span>Spend better.</span>
+            </h1>
+
+            <p>
+                Discover products, compare prices, and find
+                options that fit your budget.
+            </p>
+        </section>
+
+        <section class="search-panel">
+            <form id="shopping-form">
+                <div class="form-group">
+                    <label for="query">
+                        What are you looking for?
+                    </label>
+
+                    <input
+                        type="text"
+                        id="query"
+                        name="query"
+                        placeholder="e.g. wireless headphones"
+                        maxlength="2000"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">
+                            Maximum budget
+                        </label>
+
+                        <input
+                            type="number"
+                            id="budget"
+                            name="budget"
+                            min="1"
+                            max="2147483647"
+                            step="1"
+                            placeholder="5000"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="currency">
+                            Currency
+                        </label>
+
+                        <select id="currency" name="currency">
+                            <option value="INR">
+                                INR — Indian Rupee
+                            </option>
+                            <option value="USD">
+                                USD — US Dollar
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="source">
+                            Product source
+                        </label>
+
+                        <select id="source" name="source">
+                            <option value="serpapi">
+                                Live Shopping Search
+                            </option>
+                            <option value="demo">
+                                Demo Catalog
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <button
+                    type="submit"
+                    id="search-button"
+                    class="primary-button"
+                >
+                    Find Products
+                </button>
+            </form>
+        </section>
+
+        <section
+            id="status-section"
+            class="status-section"
+            role="status"
+            aria-live="polite"
+        ></section>
+
+        <section id="intent-section" class="intelligence-panel" hidden
+                 aria-labelledby="intent-heading">
+            <h2 id="intent-heading">Your shopping intent</h2>
+            <p id="intent-query"></p>
+            <p id="intent-details" class="intelligence-details"></p>
+            <p id="intent-status" class="intelligence-details"></p>
+        </section>
+
+        <section
+            id="results-section"
+            class="results-section"
+            hidden
+        >
+            <div class="section-heading">
+                <div>
+                    <h2>Recommended Products</h2>
+                    <p id="results-summary"></p>
+                </div>
+            </div>
+
+            <section id="ai-comparison-section" class="intelligence-panel" hidden
+                     aria-labelledby="ai-comparison-heading">
+                <h3 id="ai-comparison-heading">Product comparison</h3>
+                <p id="ai-comparison-summary"></p>
+                <p id="ai-comparison-status" class="intelligence-details"
+                   role="status" aria-live="polite"></p>
+            </section>
+
+            <div
+                id="product-grid"
+                class="product-grid"
+            ></div>
+        </section>
+
+        <section class="disclaimer">
+            <p>
+                External shopping listings are for comparison
+                only. Prices and stock availability may change.
+                PayPal sandbox checkout is reserved for
+                authorized demo products.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                SpendPilot AI — Intelligent shopping,
+                responsible spending.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
